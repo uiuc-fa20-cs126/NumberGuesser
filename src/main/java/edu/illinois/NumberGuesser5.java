@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * `NumberGuesser4`.
- * @author anonymous.
+ * `NumberGuesser5`.
+ * @author David Brewster.
  */
 public class NumberGuesser5 {
     private int lo;
@@ -88,12 +88,14 @@ public class NumberGuesser5 {
         int numAttempts = 0;
         logger.print("Implementation 5\n================\nType a number: ");
 
-        while (input.hasNextInt()) {
+        while (input.hasNext()) {
             // Check if input is valid.
             Integer guessedNum = getGuess(input);
             ++numAttempts;
 
             if (guessedNum == null) {
+                System.out.print(input.next());
+                System.out.println(" is not a number.  Try again.");
                 continue;
             }
 

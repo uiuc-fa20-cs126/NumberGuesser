@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * `NumberGuesser2`.
- * @author anonymous.
+ * @author David Brewster.
  */
 public class NumberGuesser2 {
     private int lo;
@@ -32,16 +32,17 @@ public class NumberGuesser2 {
         int numAttempts = 0;
         System.out.print("Implementation 2\n================\nType a number: ");
 
-        while (input.hasNextInt()) {
+        while (input.hasNext()) {
             // Check if input is valid.
             int guessedNum;
             try {
                 guessedNum = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("You didn't input a number.");
+                System.out.print(input.next());
+                System.out.println(" is not a number.  Try again.");
                 continue;
             } finally {
-                ++numAttempts;
+               ++numAttempts;
             }
 
             // Process input.

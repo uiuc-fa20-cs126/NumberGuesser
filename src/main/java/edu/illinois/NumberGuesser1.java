@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * `NumberGuesser1`.
- * @author anonymous.
+ * @author David Brewster.
  */
 public class NumberGuesser1 {
     private int lo;
@@ -30,18 +30,19 @@ public class NumberGuesser1 {
         System.out.print(hi);
         System.out.print(": ");
 
-        while (input.hasNextInt()) {
+        while (input.hasNext()) {
             // Check if input is valid.
             int guessedNum;
             try {
                 guessedNum = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("You didn't input a number.");
+                System.out.print(input.next());
+                System.out.println(" is not a number.  Try again.");
                 continue;
             } finally {
-               ++numAttempts;
+                ++numAttempts;
             }
-
+            
             // Process input.
             if (guessedNum > correctNum) {
                 System.out.println("Too high!");

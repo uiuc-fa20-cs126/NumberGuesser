@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  * `NumberGuesser3`.
- * @author anonymous.
+ * @author David Brewster.
  */
 public class NumberGuesser3 {
     private int lo;
@@ -41,16 +41,17 @@ public class NumberGuesser3 {
         int numAttempts = 0;
         logger.print("Implementation 3\n================\nType a number: ");
 
-        while (input.hasNextInt()) {
+        while (input.hasNext()) {
             // Check if input is valid.
             int guessedNum;
             try {
                 guessedNum = input.nextInt();
             } catch (InputMismatchException e) {
-                logger.println("You didn't input a number.");
+                System.out.print(input.next());
+                System.out.println(" is not a number.  Try again.");
                 continue;
             } finally {
-                ++numAttempts;
+               ++numAttempts;
             }
 
             // Process input.
